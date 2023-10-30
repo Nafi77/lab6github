@@ -6,6 +6,17 @@ def encode(password):
         encoded += str(encoded_digit)
     return encoded
 #I just used a simple for loop to go through each digit and encode it
+
+#Sarthak - Lab 6 Decoder
+
+def decode(ec):
+
+        old_digits = [(int(digit) - 3) % 10 for digit in password]
+        ec = "".join(map(str, old_digits))
+        return ec
+
+# End of Sarthak's contribution
+
 def print_menu():
     return (f"Menu\n-------------\n1. Encode\n2. Decode\n3. Quit")
 print(print_menu())
