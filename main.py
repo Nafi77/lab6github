@@ -10,10 +10,8 @@ def encode(password):
 #Sarthak - Lab 6 Decoder
 
 def decode(ec):
-    ec = ""
-    for digit in ec:
-        old_digits = (int(digit) - 3) % 10
-        ec += str(old_digits)
+    old_digits = [(int(digit) - 3) % 10 for digit in password]
+    ec = "".join(map(str, old_digits))
     return ec
 
 # End of Sarthak's contribution
@@ -30,7 +28,7 @@ menu_option = int(input("Please enter an option: "))
 while value == True:
     if menu_option == 1:
         ec = input("Please enter your password to encode: ")
-        if len(str(ec)) == 8:
+        if len(str(ec)) >= 8:
             print("Your password has been encoded and stored!")
             encoded = encode(str(ec))
             print(f'\n{print_menu()}')
