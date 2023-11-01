@@ -10,10 +10,11 @@ def encode(password):
 #Sarthak - Lab 6 Decoder
 
 def decode(ec):
-    old_digits = [(int(digit) - 3) % 10 for digit in password]
-    ec = "".join(map(str, old_digits))
+    ec = ""
+    for digit in ec:
+        old_digit = (int(digit) - 3)% 10
+        ec += str(old_digit)
     return ec
-
 # End of Sarthak's contribution
 
 def print_menu():
